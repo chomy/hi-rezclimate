@@ -1,5 +1,6 @@
 #!/bin/sh
 
+BASEDIR=`dirname $0`
 HOUR=`TZ=UTC date +%H`
 MIN=`TZ=UTC date +%M`
 BASEURL='http://weather.noaa.gov/pub/data/observations/metar/cycles/'
@@ -10,4 +11,4 @@ if [ $MIN -gt 45 ];then
 fi
 PREFIX=$(($PREFIX % 24))
 
-wget -q -O- $(printf "$BASEURL%02dZ.TXT" $PREFIX) | grep ^[A-Z] | sort | uniq | ./insert.pl
+wget -q -O- $(printf "$BASEURL%02dZ.TXT" $PREFIX) | grep ^[A-Z] | sort | uniq | $BASEDIR/insert.pl
