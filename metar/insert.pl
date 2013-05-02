@@ -9,7 +9,7 @@ $DBPASSWD='passwd';
 $DBNAME='metar';
 $DBIOPT="dbi:Pg:dbname=$DBNAME;host=localhost";
 
-($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = gmtime(time);
 $year += 1900;
 $mon += 1;
 
@@ -52,8 +52,10 @@ sub execute
 
 sub main
 {
-	#my $dbh = DBI->connect("dbi:Pg:dbname=metar", "","") or die;
-	my $dbh = DBI->connect($DBIOPT, $DBUSER, $DBPASSWD) or die;
+	my $dbh = DBI->connect($DBIOPT, $DBUSER, $DBPASSWD,
+		{
+			PrintError =>0
+		}) or die;
 	my $sth = $dbh->prepare("SELECT addReport(?,?,?,?,?,?,?,?);");
 	my @input = <STDIN>;
 	foreach my $line (@input){
@@ -61,6 +63,8 @@ sub main
 			execute $line, $sth
 		}
 	}
+	$sth->finish;
+	$dbh->disconnect;
 }
 
 
