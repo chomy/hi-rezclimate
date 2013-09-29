@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+<!-- _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+  Style Sheet Call from Main
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ -->
+  <Style id="red_h">
+    <IconStyle>
+      <color>ff0000ff</color>
+      <scale>1.1</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <Style id="red_n">
+    <IconStyle>
+      <color>ff0000ff</color>
+      <scale>1.0</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <StyleMap id="red">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#red_n</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#red_h</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="orange_h">
+    <IconStyle>
+      <color>ff0088ff</color>
+      <scale>1.1</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <Style id="orange_n">
+    <IconStyle>
+      <color>ff0088ff</color>
+      <scale>1.0</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <StyleMap id="orange">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#orange_n</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#orange_h</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="yellow_h">
+    <IconStyle>
+      <color>ff00ffff</color>
+      <scale>1.1</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <Style id="yellow_n">
+    <IconStyle>
+      <color>ff00ffff</color>
+      <scale>1.0</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <StyleMap id="yellow">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#yellow_n</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#yellow_h</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="green_h">
+    <IconStyle>
+      <color>ff00ff00</color>
+      <scale>1.1</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <Style id="green_n">
+    <IconStyle>
+      <color>ff00ff00</color>
+      <scale>1.0</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <StyleMap id="green">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#green_n</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#green_h</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="white_h">
+    <IconStyle>
+      <color>ffffffff</color>
+      <scale>1.1</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <Style id="white_n">
+    <IconStyle>
+      <color>ffffffff</color>
+      <scale>1.0</scale>
+      <Icon>
+        <href>screen_img/icon_typhoon.png</href>
+      </Icon>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+  </Style>
+  <StyleMap id="white">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#white_n</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#white_h</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="sh_line">
+    <IconStyle>
+      <color>ffffffff</color>
+      <scale>1.0</scale>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+    <LineStyle>
+      <color>ffff00ff</color>
+      <width>3.0</width>
+    </LineStyle>
+  </Style>
+  <Style id="sn_line">
+    <IconStyle>
+      <color>ffffffff</color>
+      <scale>1.0</scale>
+      <Icon>
+        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+      </Icon>
+    </IconStyle>
+    <LineStyle>
+      <color>ffff00ff</color>
+      <width>3.0</width>
+    </LineStyle>
+  </Style>
+  <StyleMap id="msn_line">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#sn_line</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#sh_line</styleUrl>
+    </Pair>
+  </StyleMap>
+  <!-- _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+       GSMap Passage Data
+       _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ -->
+  <Folder>
+    <name>GSMaP Passage Data</name>
+    <!-- ********************************************************
+       IR Data
+       ********************************************************** -->
+    <Folder>
+      <name>IR</name>
+      $__IRDATA__
+      <Folder>
+	<name>Screen Image</name>
+	<ScreenOverlay>
+	  <Icon>
+	    <href>%sscreen_img/gsmap_ir_logo_rep.png</href>
+	  </Icon>
+	  <overlayXY x='0' y='0' xunits='fraction' yunits='fraction'/>
+	  <screenXY x='15' y='48' xunits='Pixels' yunits='Pixels'/>
+	  <size x='210' y='15' xunits='pixels' yunits='pixels'/>
+	</ScreenOverlay>
+      </Folder>
+    </Folder>
+    <!-- ********************************************************
+	 Rain Data
+	 ******************************************************** -->
+    <Folder>
+      <name>Rain</name>
+      $__RAIN__
+      <Folder> 
+	<name>Screen Image</name>
+	<Style>
+	  <ListStyle>
+	    <listItemType>checkHideChildren</listItemType>
+	  </ListStyle>
+	</Style>
+	<ScreenOverlay>
+	  <Icon>
+	    <href>http://sakura.hi-rezclimate.org/~chome/trmm/kml/screen_img/jaxalogo.png</href>
+	  </Icon>
+	  <overlayXY x='0' y='0' xunits='fraction' yunits='fraction'/>
+	  <screenXY x='5' y='60' xunits='Pixels' yunits='Pixels'/>
+	  <size x='150' y='89' xunits='pixels' yunits='pixels'/>
+	</ScreenOverlay>
+	<ScreenOverlay>
+	  <Icon>
+	    <href>http://sakura.hi-rezclimate.org/~chome/trmm/kml/screen_img/gsmaplogo.png</href>
+	  </Icon>
+	  <overlayXY x='0' y='0' xunits='fraction' yunits='fraction'/>
+	  <screenXY x='155' y='60' xunits='Pixels' yunits='Pixels'/>
+	  <size x='282' y='89' xunits='pixels' yunits='pixels'/>
+	</ScreenOverlay>
+	<ScreenOverlay>
+	  <Icon>
+	    <href>http://sakura.hi-rezclimate.org/~chome/trmm/kml/screen_img/gsmap_colorbar.png</href>
+	  </Icon>
+	  <overlayXY x='0' y='1' xunits='fraction' yunits='fraction'/>
+	  <screenXY x='0' y='0' xunits='fraction' yunits='insetPixels'/>
+	  <size x='40' y='360' xunits='pixels' yunits='pixels'/>
+	</ScreenOverlay>
+      </Folder>
+    </Folder>
+  </Folder>
+</Document>
+</kml>
