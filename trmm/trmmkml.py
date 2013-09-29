@@ -30,10 +30,12 @@ planet = (x0y0, x0y1, x0y2, x0y3,
 
 asia = (x1y0,x1y1)
 
-def genTile(sens, date, resion):
-    imgurl = lambda(area): baseurl + 'file/gsmap_' + sens + '.' + date.strftime('%Y%m%d.%H00_') + area[0] + '.png'
 
-    retval = """<Folder>
+def genTiles(sens, datefrom, dateto, region):
+    def iterator(date):
+        imgurl = lambda(area): baseurl + 'file/gsmap_' + sens + '.' + date.strftime('%Y%m%d.%H00_') + area[0] + '.png'
+    
+        retval = """<Folder>
   <name>%s</name>
   <TimeSpan>
     <begin>%s</begin>
@@ -42,8 +44,8 @@ def genTile(sens, date, resion):
                   date.strftime('%Y-%m-%dT%H:00:00Z'), #timespan begin
                   date.strftime('%Y-%m-%dT%H:59:00Z')) #timespan end
 
-    for i in resion:
-        retval += """<GroundOverlay>
+        for i in region:
+            retval += """<GroundOverlay>
   <Icon>
     <href>%s</href>
   </Icon>
@@ -56,16 +58,14 @@ def genTile(sens, date, resion):
     <west>%d</west>
   </LatLonBox>
 </GroundOverlay>\n"""%(imgurl(i), i[1][0], i[1][1], i[1][2], i[1][3])
-    retval += '</Folder>\n'
-    return retval
+        retval += '</Folder>\n'
+        return retval
 
-
-def genTiles(sens, datefrom, dateto, region):
     a_hour = datetime.timedelta(0,3600) # 1 hour
     retval = ''
     current = param[0]
     while True:
-        retval += genTile(sens, current, region)
+        retval += iterator(current)
         current += a_hour
         if(current > dateto):
             break
@@ -79,8 +79,13 @@ def generateKML(datefrom, dateto, region):
         for line in f:
             tmp += line
     tmpl = Template(tmp)
-    print tmpl.substitute(__IRDATA__= 'chome', __RAIN__='Chome')
+
+    tile_ir  = genTiles('ir', datefrom, dateto, region)
+    tile_rain= genTiles('ir', datefrom, dateto, region)
+    return tmpl.substitute(__IRDATA__= tile_ir, __RAIN__= tile_rain)
 
 param = (datetime.datetime(2013,9,15, 0), datetime.datetime(2013,9,15, 0), asia)
 #print genTile('ir', asia, datetime.datetime(2013,9,15, 0)) 
-print genTiles('ir', datetime.datetime(2013,9,15, 0), datetime.datetime(2013,9,15, 1), asia)
+#print genTiles('ir', datetime.datetime(2013,9,15, 0), datetime.datetime(2013,9,15, 1), asia)
+print generateKML(datetime.datetime(2013,9,15, 0),
+                  datetime.datetime(2013,9,15, 0),asia)
