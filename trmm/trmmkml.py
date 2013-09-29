@@ -21,7 +21,7 @@ x2y3 = ('x2y3', (-30, -60, -180, -90))
 x3y0 = ('x3y0', ( 60,  30, -90, 0))
 x3y1 = ('x3y1', ( 30,   0, -90, 0))
 x3y2 = ('x3y2', (  0, -30, -90, 0))
-x3y3 = ('x3y3', (-30, -60, -00, 0))
+x3y3 = ('x3y3', (-30, -60, -90, 0))
 
 planet = (x0y0, x0y1, x0y2, x0y3,
           x1y0, x1y1, x1y2, x1y3,
@@ -63,7 +63,7 @@ def genTiles(sens, datefrom, dateto, region):
 
     a_hour = datetime.timedelta(0,3600) # 1 hour
     retval = ''
-    current = param[0]
+    current = datefrom
     while True:
         retval += iterator(current)
         current += a_hour
@@ -81,12 +81,12 @@ def generateKML(datefrom, dateto, region):
     tmpl = Template(tmp)
 
     tile_ir  = genTiles('ir', datefrom, dateto, region)
-    tile_rain= genTiles('ir', datefrom, dateto, region)
+    tile_rain= genTiles('rain', datefrom, dateto, region)
     return tmpl.substitute(__IRDATA__= tile_ir, __RAIN__= tile_rain)
 
 #param = (datetime.datetime(2013,9,15, 0), datetime.datetime(2013,9,15, 0), asia)
 #print genTile('ir', asia, datetime.datetime(2013,9,15, 0)) 
 #print genTiles('ir', datetime.datetime(2013,9,15, 0),
 #               datetime.datetime(2013,9,15, 1), asia)
-#print generateKML(datetime.datetime(2013,9,15, 0),
-#                  datetime.datetime(2013,9,15, 0),asia)
+print generateKML(datetime.datetime(2013,9,15, 0),
+                  datetime.datetime(2013,9,15, 0),planet)

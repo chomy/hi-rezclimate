@@ -205,7 +205,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ -->
 	<name>Screen Image</name>
 	<ScreenOverlay>
 	  <Icon>
-	    <href>%sscreen_img/gsmap_ir_logo_rep.png</href>
+	    <href>http://sakura.hi-rezclimate.org/~chome/trmm/kml/screen_img/gsmap_ir_logo_rep.png</href>
 	  </Icon>
 	  <overlayXY x='0' y='0' xunits='fraction' yunits='fraction'/>
 	  <screenXY x='15' y='48' xunits='Pixels' yunits='Pixels'/>
