@@ -75,7 +75,7 @@ def genTiles(sens, datefrom, dateto, region):
 
 def generateKML(datefrom, dateto, region):
     tmp = ''        
-    with open('kml.xml') as f:
+    with open('kml.tmpl') as f:
         for line in f:
             tmp += line
     tmpl = Template(tmp)
@@ -88,5 +88,5 @@ def generateKML(datefrom, dateto, region):
 #print genTile('ir', asia, datetime.datetime(2013,9,15, 0)) 
 #print genTiles('ir', datetime.datetime(2013,9,15, 0),
 #               datetime.datetime(2013,9,15, 1), asia)
-print generateKML(datetime.datetime(2013,9,15, 0),
-                  datetime.datetime(2013,9,15, 0),planet)
+#print generateKML(datetime.datetime(2013,9,15, 0),
+#                  datetime.datetime(2013,9,16, 0),planet)
