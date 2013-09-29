@@ -84,8 +84,9 @@ def generateKML(datefrom, dateto, region):
     tile_rain= genTiles('ir', datefrom, dateto, region)
     return tmpl.substitute(__IRDATA__= tile_ir, __RAIN__= tile_rain)
 
-param = (datetime.datetime(2013,9,15, 0), datetime.datetime(2013,9,15, 0), asia)
+#param = (datetime.datetime(2013,9,15, 0), datetime.datetime(2013,9,15, 0), asia)
 #print genTile('ir', asia, datetime.datetime(2013,9,15, 0)) 
-#print genTiles('ir', datetime.datetime(2013,9,15, 0), datetime.datetime(2013,9,15, 1), asia)
-print generateKML(datetime.datetime(2013,9,15, 0),
-                  datetime.datetime(2013,9,15, 0),asia)
+#print genTiles('ir', datetime.datetime(2013,9,15, 0),
+#               datetime.datetime(2013,9,15, 1), asia)
+#print generateKML(datetime.datetime(2013,9,15, 0),
+#                  datetime.datetime(2013,9,15, 0),asia)
